@@ -1,6 +1,6 @@
 # FRC Team 316 Official WordPress Theme
 
-![Lunatecs Logo](https://i.imgur.com/I47yjRL.png)
+![Lunatecs Logo](https://i.imgur.com/ThteKGA.jpg)
 
 ## Table of Contents
 
