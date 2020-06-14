@@ -17,7 +17,7 @@
 
 ## Information
 
-This is the codebase for FRC Team 316's current WordPress theme. It extends the NextLevel base theme created by @rkanson.
+This is the codebase for FRC Team 316's current WordPress theme. It extends the NextLevel base theme created by [Richard Kanson](https://github.com/rkanson).
 
 ## Features
 
