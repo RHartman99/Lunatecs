@@ -1,0 +1,75 @@
+.button {
+  &:not(.square) {
+    @apply flex justify-start items-center relative font-mont font-bold text-luna-primary;
+    max-width: 300px;
+    &:before {
+      content: "";
+      width: 100px;
+      height: 2px;
+      transition: 0.2s ease-in-out;
+      @apply flex mr-8 bg-luna-primary;
+    }
+
+    &:hover:before {
+      width: 125px;
+    }
+
+    &.secondary {
+      @apply text-luna-secondary;
+
+      &:before {
+        @apply bg-luna-secondary;
+      }
+    }
+  }
+
+  &.square {
+    &:not(.transparent) {
+      @apply relative flex justify-center items-center font-mont font-bold py-4 px-12 bg-luna-primary;
+      transition: 0.2s ease-in-out;
+      &.line {
+        &:before,
+        &:after {
+          @apply absolute bg-black;
+          width: 100px;
+          opacity: 0.5;
+          height: 2px;
+          content: "";
+        }
+
+        &:before {
+          left: -100px;
+        }
+
+        &:after {
+          left: 100%;
+        }
+      }
+
+      &:hover {
+        background-color: #d6b609;
+      }
+    }
+
+    &.transparent {
+      border: 2px solid white;
+      @apply py-4 px-12 text-white font-mont font-bold text-xl relative tracking-widest;
+      transition: 0.2s ease-in-out;
+
+      &:after {
+        @apply bg-white w-full absolute bottom-0 left-0;
+        height: 0;
+        transition: 0.2s ease-in-out;
+        z-index: -1;
+        content: "";
+      }
+
+      &:hover {
+        @apply text-black;
+        &:after {
+          @apply h-full;
+        }
+      }
+    }
+  }
+}

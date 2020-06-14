@@ -1,0 +1,90 @@
+<div
+	class="sidebar" data-controller="sidebar">
+	{# Change name of default sidebar in timber.php #}
+
+	<div class="sidebar__single">
+		<div class="sidebar__title">
+			{% set sidebar_name = function('str_replace','Information Center','</br>Information Center', label1 ) %}
+			{{ sidebar_name }}
+		</div>
+		<ul class="sidebar__menu">
+			{% for link in sidebar_first.items %}
+				<li class="sidebar__menu-item">
+					<a href="{{ link.url }}">{{ link.title }}</a>
+					{% if link.children %}
+						<button class="submenu-toggle"></button>
+						<ul class="sidebar__menu-children children">
+							{% for child in link.children %}
+								<li class="sidebar__menu-children-item children__item">
+									<a class="children__item-link" href="{{ child.url }}">{{ child.title }}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	{% if label2 == 'none' %}
+		{# Do nothing #}
+	{% else %}
+		<div class="sidebar__single">
+
+			<div class="sidebar__title">
+				{% set sidebar_name = function('str_replace','Information Center','</br>Information Center', sidebar_second.name) %}
+				{{ sidebar_name }}
+
+			</div>
+			<ul class="sidebar__menu">
+				{% for link in sidebar_second.items %}
+					<li class="sidebar__menu-item">
+						<a href="{{ link.url }}">{{ link.title }}</a>
+						{% if link.children %}
+							<button class="submenu-toggle"></button>
+							<ul class="sidebar__menu-children children">
+								{% for child in link.children %}
+									<li class="sidebar__menu-children-item children__item">
+										<a class="children__item-link" href="{{ child.url }}">{{ child.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+
+	{% if label3 == 'none' %}
+		{# Do nothing #}
+	{% else %}
+		<div class="sidebar__single">
+
+			<div class="sidebar__title">
+				{% set sidebar_name = function('str_replace','Information Center','</br>Information Center', sidebar_third.name) %}
+				{{ sidebar_name }}
+
+			</div>
+			<ul class="sidebar__menu">
+				{% for link in sidebar_third.items %}
+					<li class="sidebar__menu-item">
+						<a href="{{ link.url }}">{{ link.title }}</a>
+						{% if link.children %}
+							<button class="submenu-toggle"></button>
+							<ul class="sidebar__menu-children children">
+								{% for child in link.children %}
+									<li class="sidebar__menu-children-item children__item">
+										<a class="children__item-link" href="{{ child.url }}">{{ child.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+
+
+</div>

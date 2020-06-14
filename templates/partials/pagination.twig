@@ -1,0 +1,19 @@
+<div class="content__right-pagination">
+  {% if posts.pagination.prev %}
+    <a class="content__right-pagination-item" href="{{posts.pagination.prev.link}}">Previous</a>
+  {% endif %}
+  <ul>
+    {% for page in posts.pagination.pages %}
+      <li class="content__right-pagination-item">
+        {% if page.link %}
+          <a href="{{page.link}}">{{page.title}}</a>
+        {% else %}
+          <span>{{page.title}}</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% if posts.pagination.next %}
+    <a class="content__right-pagination-item" href="{{posts.pagination.next.link}}">Next</a>
+  {% endif %}
+</div>

@@ -1,0 +1,43 @@
+<header class="header" data-controller="menu">
+	<div class="header__left">
+		<a href="/">
+			<svg width="117" height="36" viewbox="0 0 117 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M57.6587 34.96C49.6942 34.2507 43.664 32.528 38.7716 29.4374C37.4631 28.576 30.6365 25.9414 23.5822 23.56C9.75824 18.848 5.49157 17.1254 2.30579 14.9467C-3.26932 11.1467 2.98846 9.62671 24.0373 9.62671C50.6614 9.67738 62.2667 10.8427 84.4534 15.7574C100.667 19.3547 108.176 21.3814 112.329 23.3574C116.652 25.384 117.164 26.3974 114.548 27.816C111.589 29.4374 106.242 30.248 91.28 31.4134C81.3245 32.1734 76.432 32.7307 74.1565 33.44C71.5396 34.3014 63.4045 35.6187 62.2667 35.3654C62.096 35.3654 60.048 35.1627 57.6587 34.96ZM65.9076 32.984C66.8747 31.616 50.4338 28.728 46.5653 29.5894C45.2 29.8934 45.1431 30.0454 45.8827 30.704C47.76 32.4267 64.9974 34.352 65.9076 32.984Z" fill="white"/>
+				<path d="M78.1956 12.8187C70.5156 10.6907 54.9849 8.61337 46.8498 8.61337C44.8018 8.61337 41.5022 8.46137 39.6249 8.30937L36.1547 7.9547L38.544 6.02937C48.6702 -2.0773 66.192 -1.87464 76.6027 6.48537C78.7076 8.15737 83.1449 13.5787 82.6329 13.8827C82.576 13.984 80.528 13.4774 78.1956 12.8187Z" fill="white"/>
+			</svg>
+			<p>Lunatecs</p>
+		</a>
+	</div>
+	<nav class="header__right">
+		<ul class="header__right--desktop">
+			{% for link in main_menu.items %}
+				{% if loop.index > 1 %}
+					<span></span>
+				{% endif %}
+				<li class="header__right--desktop-item{% if link.current %} is-active{% endif %}">
+					<a href={{ link.url }}>{{ link.title }}
+						{% if link.children %}
+							<span>+</span>
+						{% endif %}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<button class="header__right--mobile" data-action="click->menu#toggle" data-target="menu.mobileBtn">
+			<div class="header__right--mobile-line"></div>
+			<div class="header__right--mobile-line"></div>
+			<div class="header__right--mobile-line"></div>
+		</button>
+	</nav>
+	<div class="header__progress" data-target="menu.progress"></div>
+	<nav class="header__mobile" data-target="menu.mobileMenu">
+		<ul>
+			{% for link in main_menu.items %}
+				<li class="header__mobile-item{% if link.current %} is-active{% endif %}">
+					<a href={{ link.url }}>{{ link.title }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+</header>

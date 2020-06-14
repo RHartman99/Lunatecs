@@ -1,0 +1,121 @@
+.footer {
+  @apply flex flex-col justify-start items-center pt-16;
+  background-color: #2b2b2b;
+  overflow-x: hidden;
+
+  &__title {
+    @apply font-mont text-white font-black text-6xl;
+
+    @media (max-width: 500px) {
+      @apply text-4xl;
+    }
+
+    span {
+      @apply text-transparent;
+      -webkit-text-stroke: 2px white;
+    }
+  }
+
+  &__location {
+    @apply relative flex tracking-wide text-xl flex-col justify-center items-center text-center text-white font-mont font-bold px-16 pl-48 py-8;
+    background: rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 720px) {
+      @apply w-full;
+    }
+
+    @media (max-width: 540px) {
+      @apply px-4 pt-48;
+    }
+
+    h2 {
+      @apply text-2xl pb-4 mb-4;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    &--nj,
+    &--marker {
+      @apply absolute;
+    }
+
+    &--marker {
+      left: 2.25rem;
+      @media (max-width: 540px) {
+        left: inherit;
+        top: 1rem;
+      }
+    }
+
+    &--nj {
+      @media (min-width: 640px) {
+        left: -18rem;
+        top: -50%;
+      }
+    }
+  }
+
+  &__form {
+    @apply justify-center items-center flex w-full flex-wrap mb-64 px-16 -mx-8;
+
+    @media (max-width: 1024px) {
+      @apply mx-0;
+    }
+    @media (max-width: 860px) {
+      @apply px-4;
+    }
+
+    @media (max-width: 640px) {
+      @apply mb-16;
+    }
+
+    &--row {
+      @apply flex flex-col w-full px-8 py-8;
+      @media (max-width: 1024px) {
+        @apply px-0;
+      }
+      &.sm {
+        @apply w-1/3;
+
+        @media (max-width: 1024px) {
+          @apply w-full;
+        }
+      }
+
+      label {
+        @apply text-white font-mont font-bold;
+      }
+
+      input,
+      textarea {
+        background-color: rgba(255, 255, 255, 0.2);
+        min-height: 50px;
+        border-bottom: 2px solid;
+        @apply border-luna-primary;
+      }
+
+      textarea {
+        min-height: 300px;
+      }
+
+      &.submit {
+        @apply -mt-16 pt-0 flex items-end;
+        button {
+          min-width: 400px;
+          @media (max-width: 640px) {
+            @apply w-full;
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    @apply w-full flex justify-center items-center text-center text-black font-mont font-bold bg-luna-primary py-4;
+    margin-top: 20rem;
+
+    a {
+      border-bottom: 2px solid black;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply font-lato font-normal;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.fade-up,
+.fade-right,
+.fade-left,
+.fade-down {
+  opacity: 0;
+}
+
+.fade-up {
+  transform: translateY(100%);
+}
+
+.fade-right {
+  transform: translateX(-100%);
+}
+
+.fade-left {
+  transform: translateX(100%);
+}
+
+.fade-down {
+  transform: translateY(-100%);
+}
+
+.faded {
+  transition: opacity 1s, transform 0.8s;
+  transform: translateY(0);
+  transform: translateX(0);
+  opacity: 1;
+}

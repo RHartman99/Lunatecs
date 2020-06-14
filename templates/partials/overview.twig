@@ -1,0 +1,29 @@
+<section class="overview">
+	<div class="overview__left glide" data-controller="slider" data-delay="{{ overview_delay }}">
+		<div data-glide-el="track" class="glide__track">
+			<ul class="glide__slides">
+				{% for image in overview_images %}
+					<li class="glide__slide" data-slide="{{loop.index}}">
+						<div class="overview__left--slide">
+							<img class="" src="{{ image.img.url }}" alt="{{ img.alt }}"/>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="overview__left--progress" data-target="slider.progress"></div>
+	</div>
+	<div class="overview__right">
+		<p class="overview__right--title fade-up">
+			<span>{{ overview_title_1_trans }}</span>
+			{{overview_title_1_filled}}
+		</p>
+		<p class="overview__right--title fade-up">
+			<span>{{ overview_title_2_filled }}</span>
+			{{overview_title_2_trans}}
+		</p>
+		<div class="overview__right--div"></div>
+		<p class="overview__right--content fade-up">{{ overview_content }}</p>
+		<a class="overview__right--btn button secondary fade-up" href="{{ overview_link }}">LEARN MORE</a>
+	</div>
+</section>

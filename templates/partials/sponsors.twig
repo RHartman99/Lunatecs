@@ -1,0 +1,28 @@
+<section class="sponsors">
+	<img class="sponsors__ufo fade-right" src="{{ ufo }}" alt="UFO"/>
+	<p class="sponsors__title fade-right">
+		<span>THANK</span>
+		YOU</p>
+	<p class="sponsors__title line fade-right">TO OUR</p>
+	<p class="sponsors__title fade-right">
+		<span>SPONSORS</span>
+	</p>
+
+	<div class="sponsors__grid">
+		{% for sponsor in sponsors %}
+			<a class="sponsors__grid--wrapper fade-up" href="{{ sponsor.url }}" target="_blank">
+				<div class="sponsors__grid--single">
+					<div class="sponsors__grid--single-left">
+						<img src="{{ sponsor.logo.url }}" alt="Sponsor Logo"/>
+					</div>
+					<div class="sponsors__grid--single-right">
+						<h2 class="{{ sponsor.level }}">{{ sponsor.level }}</h2>
+						<p>Sponsor</p>
+					</div>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+
+	<a href="/sponsors" class="mt-16 button square line">VIEW ALL OUR SPONSORS</a>
+</section>

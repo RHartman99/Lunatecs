@@ -1,0 +1,50 @@
+image: phpdockerio/php74-fpm
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+cache: &global_cache
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+    - vendor/
+
+variables:
+  THEME_DIR: $SITE_PATH/wp-content/themes/nextlevel/
+
+before_script:
+  - apt-get update -y
+  - apt-get install sshpass rsync -y
+  - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+  - apt-get install -y nodejs
+  - curl --show-error --silent https://getcomposer.org/installer | php
+  - php composer.phar install --no-dev
+  - npm ci --cache .npm --prefer-offline
+  - npm run build
+  - rm -rf node_modules
+  - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
+  - mkdir -p ~/.ssh
+  - eval $(ssh-agent -s)
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+live:
+  cache:
+    <<: *global_cache
+  only:
+    refs:
+      - master
+  script:
+    - sshpass -p $SFTP_PASS ssh $SFTP_USER@$SFTP_HOST -p $SFTP_PORT "rm -rf $THEME_DIR"
+    - sshpass -p $SFTP_PASS ssh $SFTP_USER@$SFTP_HOST -p $SFTP_PORT "mkdir $THEME_DIR"
+    - sshpass -p $SFTP_PASS rsync -a -e "ssh -p $SFTP_PORT" ./ $SFTP_USER@$SFTP_HOST:$THEME_DIR
+
+staging:
+  cache:
+    <<: *global_cache
+  only:
+    refs:
+      - staging
+  script:
+    - sshpass -p $SFTP_PASS ssh $SFTP_USER@$SFTP_HOST -p $SFTP_STAGING_PORT "rm -rf $THEME_DIR"
+    - sshpass -p $SFTP_PASS ssh $SFTP_USER@$SFTP_HOST -p $SFTP_STAGING_PORT "mkdir $THEME_DIR"
+    - sshpass -p $SFTP_PASS rsync -a -e "ssh -p $SFTP_STAGING_PORT" ./ $SFTP_USER@$SFTP_HOST:$THEME_DIR

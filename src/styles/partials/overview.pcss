@@ -1,0 +1,107 @@
+.overview {
+  @apply flex w-full relative;
+  height: 600px;
+  &__left,
+  &__right {
+    @apply w-1/2;
+  }
+
+  @media (max-width: 1280px) {
+    @apply flex-col-reverse;
+    &__left,
+    &__right {
+      @apply w-full;
+    }
+
+    height: inherit;
+  }
+
+  &__right {
+    @apply pr-16 pl-12 font-mont py-16;
+
+    &--title {
+      @apply font-black text-6xl uppercase;
+      line-height: 1;
+      span {
+        @apply text-transparent;
+        -webkit-text-stroke: 2px black;
+      }
+
+      @media (max-width: 1520px) {
+        @apply text-5xl;
+      }
+
+      @media (max-width: 1280px) {
+        @apply text-6xl;
+      }
+
+      @media (max-width: 1024px) {
+        @apply text-5xl;
+      }
+
+      @media (max-width: 640px) {
+        @apply flex flex-col;
+      }
+
+      @media (max-width: 500px) {
+        @apply text-4xl;
+      }
+    }
+
+    @media (max-width: 640px) {
+      @apply px-4;
+    }
+
+    &--div {
+      @apply w-full bg-black my-8;
+      width: 90%;
+      height: 2px;
+      opacity: 0.4;
+    }
+
+    &--content {
+      @apply mb-16;
+
+      @media (min-width: 640px) {
+        @apply text-xl;
+      }
+    }
+  }
+
+  &__left {
+    @apply h-full relative;
+    overflow: hidden;
+
+    .glide__track {
+      @apply h-full;
+    }
+
+    .glide__slides {
+      @apply flex h-full;
+
+      img {
+        @apply absolute top-0 left-0 h-full w-full;
+        object-fit: cover;
+        z-index: -1;
+      }
+    }
+
+    &--slide {
+      @apply flex relative w-full h-full;
+    }
+
+    &--progress {
+      transition: none;
+      @apply absolute bg-luna-secondary h-0 right-0 bottom-0;
+      width: 8px;
+    }
+  }
+  &:after {
+    @apply absolute left-0;
+    bottom: -50px;
+    content: "";
+    background-color: #590004;
+    width: 40%;
+    height: 50px;
+  }
+}

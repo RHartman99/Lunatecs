@@ -1,0 +1,71 @@
+{
+  "key": "group_5aec69b55f3e2",
+  "title": "Schema Codes",
+  "fields": [
+    {
+      "key": "field_5c33876098c06",
+      "label": "Schema Codes",
+      "name": "schema_codes",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "collapsed": "field_5c33877d98c07",
+      "min": 0,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add Schema",
+      "sub_fields": [
+        {
+          "key": "field_5c33877d98c07",
+          "label": "Single Schema",
+          "name": "single_schema",
+          "type": "textarea",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "",
+          "maxlength": "",
+          "rows": "16",
+          "new_lines": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ],
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1581698332
+}

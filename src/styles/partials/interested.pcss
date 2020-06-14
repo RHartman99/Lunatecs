@@ -1,0 +1,32 @@
+.interested {
+  @apply py-48 w-full flex relative flex-col justify-center items-center bg-black;
+
+  p {
+    @apply text-6xl font-mont font-black text-white mb-8;
+
+    @media (max-width: 640px) {
+      @apply text-4xl;
+    }
+  }
+
+  * {
+    @apply relative;
+    z-index: 3;
+  }
+
+  &__bg {
+    @apply absolute top-0 left-0 w-full h-full;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &__border {
+    @apply w-full h-full absolute top-0 left-0;
+    border: 8px solid white;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
+    opacity: 0.2;
+  }
+}

@@ -1,0 +1,208 @@
+.header {
+  @apply bg-transparent fixed top-0 left-0 right-0 flex flex-row flex-wrap items-center justify-between p-4 py-8 z-50;
+  transition: 0.2s ease-in-out;
+
+  &__progress {
+    @apply left-0 absolute bg-luna-primary absolute shadow-lg;
+    height: 4px;
+    bottom: -4px;
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+  }
+
+  &.scrolled {
+    @apply bg-black px-8 py-6;
+
+    .header__progress {
+      opacity: 1;
+    }
+  }
+
+  &__left {
+    @apply flex;
+    a {
+      @apply flex text-white font-bold font-mont text-xl uppercase tracking-widest justify-start items-center;
+      max-width: 250px;
+      transition: 0.2s ease-in-out;
+
+      svg,
+      svg path {
+        transition: 0.2s ease-in-out;
+      }
+      p {
+        @apply ml-6;
+
+        @media (max-width: 500px) {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      &:hover {
+        @apply text-luna-primary;
+
+        svg {
+          transform: scale(-50%);
+        }
+
+        svg path {
+          fill: #ffe600;
+        }
+      }
+    }
+  }
+
+  &__right {
+    @apply flex flex-row items-center justify-end;
+
+    @media (max-width: 1280px) {
+      @apply mt-4;
+    }
+
+    &--desktop {
+      @apply flex items-center justify-center text-white font-mont;
+
+      @media (max-width: 1024px) {
+        @apply hidden;
+      }
+
+      & > span {
+        @apply bg-luna-primary h-full;
+        width: 3px;
+      }
+
+      &-item {
+        &:not(:first-of-type) {
+          & > a:before {
+            width: 2px;
+          }
+        }
+
+        &:last-of-type {
+          & > a {
+            @apply text-black uppercase;
+            border: 2px solid transparent;
+            &:before {
+              width: calc(100% + 2px);
+            }
+
+            &:hover {
+              @apply text-white border-white;
+
+              &:before {
+                @apply bg-transparent;
+              }
+            }
+          }
+        }
+
+        & > a {
+          @apply relative px-6 font-bold py-1;
+          transition: 0.2s ease-in-out;
+
+          &:before {
+            @apply absolute left-0 top-0 bg-luna-primary h-full;
+            width: 0px;
+            transition: 0.2s ease-in-out;
+            content: "";
+            z-index: -1;
+          }
+
+          &:hover {
+            @apply text-black;
+            &:before {
+              width: calc(100% + 3px);
+            }
+          }
+        }
+      }
+    }
+
+    &--mobile {
+      @apply text-white font-mont font-bold flex-col px-8 h-full w-full absolute right-0 top-0 flex items-center justify-center;
+      width: 100px;
+      transition: 0.4s ease-in-out;
+      z-index: 120;
+
+      @media (min-width: 1024px) {
+        @apply hidden;
+      }
+
+      &-line {
+        @apply relative bg-white w-full;
+        opacity: 1;
+        z-index: 200;
+        height: 2px;
+        transition: 0.4s ease-in-out;
+
+        &:not(:first-child) {
+          @apply mt-2;
+        }
+      }
+      &.active {
+        @apply flex !important;
+        .header__right--mobile-line {
+          @apply bg-black;
+          &:nth-child(1) {
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            @apply mt-0;
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            @apply -mt-1;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__left,
+  &__right {
+    @media (max-width: 1280px) and (min-width: 1024px) {
+      @apply w-full justify-center items-center;
+    }
+  }
+
+  &__menu {
+    @apply absolute left-0 right-0 top-0 bottom-0 w-screen h-screen bg-gray-800 z-40;
+
+    &.hidden {
+      @apply hidden;
+    }
+
+    &-close {
+      @apply absolute top-0 right-0 p-4 text-2xl text-white;
+    }
+  }
+
+  &__mobile {
+    @apply flex fixed top-0 right-0 text-black h-screen bg-white justify-center items-center;
+    z-index: 100;
+    transition: 0.4s ease-in-out;
+    transform: translateX(100%);
+    ul {
+      @apply flex flex-col;
+    }
+    li {
+      @apply flex w-full items-center justify-center;
+    }
+
+    li > a {
+      @apply font-mont font-bold text-xl flex w-full items-center justify-center text-center py-8 px-16;
+
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        @apply bg-gray-300;
+      }
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}

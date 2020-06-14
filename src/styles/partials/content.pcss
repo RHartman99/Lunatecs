@@ -1,0 +1,72 @@
+.content {
+  @apply py-16 px-8;
+
+  &.inner {
+    @apply flex flex-col items-start justify-between;
+
+    @media (--large) {
+      @apply flex-row;
+    }
+  }
+
+  &__left,
+  &__right {
+    @apply mx-8;
+  }
+
+  &__left {
+    p {
+      @apply mb-4;
+    }
+  }
+
+  &__right {
+    &-pagination {
+      @apply flex flex-row items-center justify-center;
+
+      ul {
+        @apply flex flex-row items-center justify-center;
+      }
+
+      &-item {
+        @apply mx-4;
+      }
+    }
+  }
+}
+
+.content {
+  &.front {
+    .content__left {
+      @apply w-full;
+
+      @media (--large) {
+        @apply w-1/2;
+      }
+    }
+    .content__right {
+      @apply w-full;
+
+      @media (--large) {
+        @apply w-1/2;
+      }
+    }
+  }
+
+  &.inner {
+    .content__left {
+      @apply w-full;
+
+      @media (--large) {
+        @apply w-2/5;
+      }
+    }
+    .content__right {
+      @apply w-full;
+
+      @media (--large) {
+        @apply w-3/5;
+      }
+    }
+  }
+}

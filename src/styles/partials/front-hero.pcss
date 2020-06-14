@@ -1,0 +1,82 @@
+.front-hero {
+  @apply w-full relative flex justify-start items-center;
+
+  &__content {
+    @apply flex pl-48 flex-col text-white font-mont font-bold -mb-8;
+
+    @media (max-width: 1280px) {
+      @apply pl-16;
+    }
+
+    @media (max-width: 640px) {
+      @apply pl-4;
+    }
+
+    &--lead {
+      @apply font-black;
+      font-size: 6rem;
+      line-height: 1;
+
+      @media (max-width: 1024px) {
+        font-size: 5rem;
+      }
+
+      @media (max-width: 860px) {
+        font-size: 3rem;
+        @apply flex flex-col;
+      }
+
+      span {
+        @apply text-transparent;
+        -webkit-text-stroke: 2px white;
+      }
+    }
+
+    &--sub {
+      @apply text-3xl mb-12;
+
+      @media (max-width: 860px) {
+        @apply text-2xl;
+      }
+
+      @media (max-width: 640px) {
+        @apply text-xl;
+      }
+    }
+  }
+
+  &__bg,
+  &__overlay,
+  &__box {
+    @apply absolute bottom-0 left-0 w-full h-full;
+  }
+
+  &__box {
+    @apply flex justify-center items-center;
+    z-index: -1;
+
+    &:after {
+      z-index: -1;
+      opacity: 0.1;
+      content: "";
+      width: 85%;
+      height: 70%;
+      @apply bg-white;
+
+      @media (max-width: 1280px) {
+        width: 95%;
+      }
+    }
+  }
+
+  &__overlay {
+    @apply bg-black flex;
+    opacity: 0.6;
+    z-index: -2;
+  }
+
+  &__bg {
+    z-index: -3;
+    object-fit: cover;
+  }
+}

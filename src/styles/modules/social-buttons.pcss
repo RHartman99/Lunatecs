@@ -1,0 +1,88 @@
+.social-button__link,
+.social-button__icon {
+  @apply inline-block;
+}
+
+.social-button__link {
+  @apply my-4 mr-2 text-white no-underline;
+}
+
+.social-button {
+  @apply rounded py-2 px-4;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    @apply cursor-pointer;
+  }
+}
+
+.social-button__icon svg {
+  @apply w-4 h-4 mr-2 align-top;
+}
+
+.social-button--small svg {
+  @apply m-0 align-middle;
+}
+
+.social-button__icon--solid,
+.social-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none;
+}
+
+.social-button--twitter {
+  background-color: #55acee;
+
+  &:hover {
+    background-color: #2795e9;
+  }
+}
+
+.social-button--facebook {
+  background-color: #3b5998;
+
+  &:hover {
+    background-color: #2d4373;
+  }
+}
+
+.social-button--linkedin {
+  background-color: #0077b5;
+
+  &:hover {
+    background-color: #046293;
+  }
+}
+
+.social-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+
+  &:hover,
+  &:active {
+    background-color: #2d4373;
+    border-color: #2d4373;
+  }
+}
+
+.social-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+
+  &:hover,
+  &:active {
+    background-color: #2795e9;
+    border-color: #2795e9;
+  }
+}
+
+.social-button--linkedin {
+  background-color: #0077b5;
+  border-color: #0077b5;
+
+  &:hover,
+  &:active {
+    background-color: #046293;
+    border-color: #046293;
+  }
+}

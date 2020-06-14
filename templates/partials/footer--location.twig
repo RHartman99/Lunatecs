@@ -1,0 +1,9 @@
+<div class="footer__location">
+	<img class="footer__location--nj fade-right" src="{{ nj }}" alt="New Jersey"/>
+	<img class="footer__location--marker fade-down" src="{{ location }}" alt="Location marker"/>
+	{% for addr in address %}
+		<h2 class="fade-up">{{ addr.address_name }}</h2>
+		<p class="fade-up">{{ addr.address_line_1 }}</p>
+		<p class="fade-up">{{ addr.address_line_2 }}</p>
+	{% endfor %}
+</div>

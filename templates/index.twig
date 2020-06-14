@@ -1,0 +1,14 @@
+{% extends "layouts/inner.twig" %}
+{% block content %}
+  <section class="content inner">
+    <aside class="content__left">
+      {% include "partials/sidebar--categories.twig" %}
+    </aside>
+    <div class="content__right">
+      {% for post in posts %}
+        {% include "partials/post-excerpt.twig" %}
+      {% endfor %}
+      {% include "partials/pagination.twig" %}
+    </div>
+  </section>
+{% endblock content %}

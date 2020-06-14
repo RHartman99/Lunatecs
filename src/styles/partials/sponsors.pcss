@@ -1,0 +1,134 @@
+.sponsors {
+  @apply relative flex flex-col justify-center items-center w-full pt-32 py-24;
+  background-color: #e5e5e5;
+  overflow-x: hidden;
+
+  &__title {
+    @apply text-6xl font-mont font-black;
+    line-height: 1;
+    span {
+      @apply text-transparent;
+      -webkit-text-stroke: 2px black;
+    }
+
+    &.line {
+      @apply -ml-32 flex justify-center items-center;
+      &:before {
+        @apply bg-black mr-6;
+        width: 300px;
+        height: 2px;
+        content: "";
+        @media (max-width: 760px) {
+          width: 200px;
+        }
+        @media (max-width: 640px) {
+          width: 100px;
+        }
+        @media (max-width: 500px) {
+          width: 0px;
+        }
+      }
+      @media (max-width: 640px) {
+        @apply -ml-16;
+      }
+      @media (max-width: 500px) {
+        @apply ml-0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      @apply text-5xl;
+    }
+  }
+
+  &__ufo {
+    @apply absolute;
+    z-index: 1;
+    top: -10vw;
+    max-width: 80%;
+
+    @media (min-width: 760px) {
+      top: -6rem;
+      left: 10%;
+    }
+  }
+
+  &__grid {
+    @apply flex flex-wrap -mx-6 mt-16 justify-center items-center;
+    &--wrapper {
+      @apply p-6;
+    }
+
+    @media (max-width: 500px) {
+      @apply mx-0;
+
+      &--wrapper {
+        @apply px-0 py-6;
+      }
+    }
+    &--single {
+      z-index: 2;
+      width: 450px;
+      @apply relative justify-center bg-white shadow-lg flex p-8 items-center;
+      transition: 0.2s ease-in-out;
+
+      @media (max-width: 500px) {
+        @apply w-full p-4;
+      }
+
+      img {
+        @apply rounded-lg;
+        height: 55px;
+        @media (max-width: 500px) {
+          height: inherit;
+          width: 100%;
+        }
+      }
+
+      &-left {
+        @apply relative pr-8;
+
+        &:after {
+          height: 100%;
+          width: 2px;
+          content: "";
+          @apply bg-black absolute right-0;
+          top: 0;
+        }
+      }
+      &-right {
+        @apply pl-8 py-4 flex flex-col font-mont font-bold justify-center items-center text-center;
+        p,
+        h2 {
+          transition: 0.2s ease-in-out;
+        }
+        h2 {
+          @apply tracking-widest uppercase text-xl;
+          line-height: 1.25;
+
+          &.platinum {
+            color: #838383;
+          }
+
+          &.gold {
+            color: #e8b923;
+          }
+        }
+
+        p {
+          @apply tracking-wide uppercase;
+        }
+      }
+
+      &:hover {
+        @apply bg-luna-primary;
+        transform: translateY(-0.5rem);
+
+        h2,
+        p {
+          @apply text-black;
+        }
+      }
+    }
+  }
+}

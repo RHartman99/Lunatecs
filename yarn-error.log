@@ -1,0 +1,98 @@
+Arguments: 
+  /home/ryan/.nvm/versions/node/v12.13.1/bin/node /usr/share/yarn/bin/yarn.js install
+
+PATH: 
+  /home/ryan/.opam/system/bin:/home/ryan/.nvm/versions/node/v12.13.1/bin:/home/ryan/.rvm/gems/ruby-2.6.3/bin:/home/ryan/.rvm/gems/ruby-2.6.3@global/bin:/usr/share/rvm/rubies/ruby-2.6.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Users/drago/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/drago/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/drago/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/drago/AppData/Local/hyper/app-3.0.2/resources/bin:/mnt/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Java/jdk-13.0.1/bin:/mnt/c/Program Files/PuTTY/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/drago/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/ProgramData/ComposerSetup/bin:/mnt/c/Users/drago/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/drago/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/drago/AppData/Local/hyper/app-3.0.2/resources/bin:/mnt/c/flutter/bin:/mnt/c/Program Files/Java/jdk1.8.0_241/bin:/mnt/c/Users/drago/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/php:/mnt/c/Users/drago/AppData/Roaming/Composer/vendor/bin:/usr/share/rvm/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@fortawesome%2fpro-solid-svg-icons: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66947:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140665:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141637:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141559:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1184:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "nextlevel",
+    "version": "2.5.0",
+    "author": "Rich Kanson",
+    "license": "MIT",
+    "keywords": [],
+    "description": "",
+    "dependencies": {
+      "@babel/polyfill": "^7.8.3",
+      "@stimulus/polyfills": "^1.1.1",
+      "animejs": "^3.1.0",
+      "core-js": "^3.6.4",
+      "es6-promise": "^4.2.8",
+      "isomorphic-fetch": "^2.2.1",
+      "regenerator-runtime": "^0.13.3",
+      "stimulus": "^1.1.1",
+      "vanilla-lazyload": "^12.4.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.8.4",
+      "@babel/plugin-proposal-class-properties": "^7.8.3",
+      "@babel/preset-env": "^7.8.4",
+      "@fortawesome/fontawesome-svg-core": "^1.2.27",
+      "@fortawesome/free-brands-svg-icons": "^5.12.1",
+      "@fortawesome/pro-solid-svg-icons": "^5.12.1",
+      "autoprefixer": "^9.7.4",
+      "babel-eslint": "^10.0.3",
+      "babel-loader": "^8.0.6",
+      "browser-sync": "^2.26.7",
+      "bs-html-injector": "^3.0.3",
+      "eslint": "^6.8.0",
+      "eslint-config-airbnb-base": "^14.0.0",
+      "eslint-config-prettier": "^6.10.0",
+      "eslint-plugin-import": "^2.20.1",
+      "eslint-plugin-prettier": "^3.1.2",
+      "gulp": "^4.0.2",
+      "gulp-csso": "^4.0.1",
+      "gulp-if": "^3.0.0",
+      "gulp-imagemin": "^7.1.0",
+      "gulp-postcss": "^8.0.0",
+      "gulp-purgecss": "^1.2.0",
+      "gulp-rename": "^2.0.0",
+      "gulp-strip-comments": "^2.5.2",
+      "path": "^0.12.7",
+      "postcss-import": "^12.0.1",
+      "postcss-media-minmax": "^4.0.0",
+      "postcss-nested": "^4.2.1",
+      "prettier": "^1.19.1",
+      "rimraf": "^3.0.2",
+      "tailwindcss": "^1.2.0",
+      "webpack-stream": "^5.2.1"
+    },
+    "scripts": {
+      "start": "rimraf dist/ && NODE_ENV=development gulp",
+      "build": "rimraf dist/ && NODE_ENV=production gulp build"
+    },
+    "browserslist": [
+      "last 2 versions",
+      "ie >= 11",
+      "> 0.2%"
+    ],
+    "sideEffects": false
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
