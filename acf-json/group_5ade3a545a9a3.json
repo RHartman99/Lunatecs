@@ -5,7 +5,7 @@
         {
             "key": "field_5ade3a63208a9",
             "label": "Social Media Accounts",
-            "name": "sm_accounts",
+            "name": "social_media",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -15,7 +15,6 @@
                 "class": "",
                 "id": ""
             },
-            "hide_admin": 0,
             "collapsed": "field_5ade3a73208aa",
             "min": 0,
             "max": 5,
@@ -25,7 +24,7 @@
                 {
                     "key": "field_5ade3a73208aa",
                     "label": "Platform",
-                    "name": "platform",
+                    "name": "icon",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -35,14 +34,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "hide_admin": 0,
                     "choices": {
-                        "FA": "Facebook",
-                        "TW": "Twitter",
-                        "LI": "LinkedIn",
-                        "IG": "Instagram",
-                        "YT": "YouTube",
-                        "GP": "Google Plus"
+                        "<i class=\"fab fa-facebook-f\"><\/i>": "Facebook",
+                        "<i class=\"fab fa-twitter\"><\/i>": "Twitter",
+                        "<i class=\"fab fa-instagram\"><\/i>": "Instagram",
+                        "<i class=\"fab fa-youtube\"><\/i>": "YouTube",
+                        "<i class=\"fab fa-github\"><\/i>": "GitHub"
                     },
                     "default_value": [],
                     "allow_null": 0,
@@ -89,7 +86,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "show_in_graphql": 1,
-    "graphql_field_name": "socialMedia",
-    "modified": 1573159064
+    "modified": 1592109948
 }

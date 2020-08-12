@@ -15,70 +15,9 @@ class NextLevelSite extends Timber\Site
 
   public function add_to_context($context)
   {
-    // $context['main_menu'] = new Timber\Menu('main-menu');
-    // $context['sidebar_menu'] = new Timber\Menu('sidebar-menu');
-    $context['location_menu'] = new Timber\Menu('location-menu');
+    $context['main_menu'] = new Timber\Menu('main-menu');
+    $context['sidebar_menu'] = new Timber\Menu('sidebar-menu');
 
-    $fieldMenu = get_field_object('main_menu');
-    $valueMenu = get_field('main_menu');
-    $context['main_menu'] = $fieldMenu['choices'][$valueMenu];
-    // Gets Names of Sidebars
-    $field1 = get_field_object('sidebar_1');
-    $value1 = get_field('sidebar_1');
-    $context['label1'] = $field1['choices'][$value1];
-
-    $field2 = get_field_object('sidebar_2');
-    $value2 = get_field('sidebar_2');
-    $context['label2'] = $field2['choices'][$value2];
-
-    $field3 = get_field_object('sidebar_3');
-    $value3 = get_field('sidebar_3');
-    $context['label3'] = $field3['choices'][$value3];
-
-    // Old pages will not have values for these
-    // Sets null values to defaults
-    if ($context['main_menu'] == 'default' || $context['main_menu'] == '') {
-      if (get_field('page_language') == 'sp') {
-        // Put the name of what you want the default Spanish main menu to be
-        $context['main_menu'] = 'Main Menu - Spanish';
-      } else {
-        $context['main_menu'] = 'Main Menu';
-      }
-    }
-    // Loads main menu
-    $context['main_menu'] = new Timber\Menu($context['main_menu']);
-
-    if ($context['label1'] == 'default' || $context['label1'] == '') {
-      // Put the name of what you want the default sidebar to be
-      if (get_field('page_language') == 'sp') {
-        // Put the name of what you want the default Spanish main menu to be
-        $context['label1'] = 'Servicios Legales';
-      } else {
-        $context['label1'] = 'Legal Services';
-      }
-    }
-    // Loads first sidebar
-    $context['sidebar_first'] = new Timber\Menu($context['label1']);
-
-    if ($context['label2'] == 'none' || $context['label2'] == '') {
-      $context['label2'] = 'none';
-    } else {
-      // Loads second sidebar
-      $context['sidebar_second'] = new Timber\Menu($context['label2']);
-    }
-    if ($context['label3'] == 'none' || $context['label3'] == '') {
-      $context['label3'] = 'none';
-    } else {
-      // Loads third sidebar
-      $context['sidebar_third'] = new Timber\Menu($context['label3']);
-    }
-
-    $context['categories'] = get_categories(array(
-      'orderby' => 'name',
-      'order'   => 'ASC',
-      'exclude' => '1',
-      'hide_empty' => '1'
-    ));
 
     $context['site_logo'] = nextlevel_get_asset('images/nextlevel.png');
     $context['site_logo_svg'] = nextlevel_get_asset('images/lunatecs.svg');

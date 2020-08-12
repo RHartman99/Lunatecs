@@ -12,4 +12,24 @@
 	<div class="front-hero__box"></div>
 	<div class="front-hero__overlay"></div>
 	<img class="front-hero__bg" src="{{ front_hero_image.url }}" alt="Front Hero Background"/>
+	<div class="front-hero__follow">
+		<p>Follow</p>
+		<ul>
+			{% for link in social_media %}
+				<li>
+					<a href="{{ link.url }}" target="_blank">{{ link.icon }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="front-hero__follow">
+		<p>Follow</p>
+		<ul>
+			{% for link in social_media %}
+				<li>
+					<a href="{{ link.url }}" target="_blank">{{ link.icon }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 </section>

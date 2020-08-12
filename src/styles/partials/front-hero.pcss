@@ -79,4 +79,48 @@
     z-index: -3;
     object-fit: cover;
   }
+
+  &__follow {
+    @apply absolute font-mont text-xl justify-center items-center font-bold text-white uppercase tracking-widest flex;
+    bottom: 2rem;
+    left: 2rem;
+
+    ul {
+      @apply flex;
+
+      li {
+        @apply text-2xl mx-3;
+
+        a {
+          transition: 0.2s ease-in-out;
+          &:hover {
+            @apply text-luna-primary;
+          }
+        }
+      }
+    }
+
+    p {
+      @apply flex items-center justify-center;
+      &:after {
+        @apply relative mx-4 flex bg-white;
+        height: 1px;
+        width: 100px;
+        content: "";
+      }
+    }
+
+    @media (max-width: 640px) {
+      @apply w-full justify-center items-center;
+      bottom: 1rem;
+      left: 0;
+      p {
+        @apply hidden;
+      }
+
+      li:first-of-type {
+        @apply ml-0;
+      }
+    }
+  }
 }

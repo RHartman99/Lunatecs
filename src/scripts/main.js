@@ -10,6 +10,7 @@ import {
   faYoutube,
   faLinkedinIn,
   faInstagram,
+  faGithub
 } from "@fortawesome/free-brands-svg-icons";
 import { faStar, faSpinnerThird } from "@fortawesome/pro-solid-svg-icons";
 import LazyLoad from "vanilla-lazyload";
@@ -28,13 +29,14 @@ library.add(
   faLinkedinIn,
   faInstagram,
   faStar,
-  faSpinnerThird
+  faSpinnerThird,
+  faGithub
 );
 
 document.addEventListener("DOMContentLoaded", () => {
   dom.watch();
 
-  document.querySelectorAll(".lazy:not([data-bg])").forEach((el) => {
+  document.querySelectorAll(".lazy:not([data-bg])").forEach(el => {
     const wrapper = document.createElement("div");
     const spinner = document.createElement("i");
     spinner.classList.add("fas");
@@ -56,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // eslint-disable-next-line no-unused-vars
   const lazy = new LazyLoad({
     elements_selector: ".lazy",
-    callback_loaded: (el) => {
+    callback_loaded: el => {
       const spinner = el.previousSibling;
       spinner.remove();
-    },
+    }
   });
 });
 

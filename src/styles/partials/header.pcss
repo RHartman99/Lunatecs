@@ -25,6 +25,10 @@
       max-width: 250px;
       transition: 0.2s ease-in-out;
 
+      @media (max-width: 500px) {
+        max-width: 225px;
+      }
+
       svg,
       svg path {
         transition: 0.2s ease-in-out;
@@ -124,6 +128,10 @@
       transition: 0.4s ease-in-out;
       z-index: 120;
 
+      &:focus {
+        outline: none;
+      }
+
       @media (min-width: 1024px) {
         @apply hidden;
       }
@@ -192,7 +200,7 @@
     }
 
     li > a {
-      @apply font-mont font-bold text-xl flex w-full items-center justify-center text-center py-8 px-16;
+      @apply font-mont font-bold flex w-full items-center justify-center text-center py-8 px-16;
 
       transition: 0.2s ease-in-out;
 
